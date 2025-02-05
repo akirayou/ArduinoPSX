@@ -57,9 +57,10 @@ int PSX::read(PSXDATA &psxdata)
 {
     // Send data request
     digitalWrite(_attPin, LOW);
-    byte response;
+    byte response,type;
     sendCommand(PSXPROT_HANDSHAKE, response);
-    sendCommand(PSXPROT_GETDATA, response);
+    sendCommand(PSXPROT_GETDATA, type);
+    psxdata.type=type;
     sendCommand(PSXPROT_IDLE, response);
     // Check response
     if(response == PSXPROT_STARTDATA)

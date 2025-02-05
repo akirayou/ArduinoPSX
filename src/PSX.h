@@ -78,6 +78,7 @@ class PSX
             byte JoyLeftY;          //!< The vertical value of the left joystick
             byte JoyRightX;         //!< The horizontal value of the right joystick
             byte JoyRightY;         //!< The vertical value of the right joystick
+            byte type; //!< Contoler type 0x73:analog  0x41:digital 
         };
 
         /**
